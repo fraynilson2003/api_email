@@ -21,7 +21,7 @@ export const setEmail = async(req: Request, res: Response)=>{
 
     return res.status(202).json({
       status: "sucess",
-      ressult: ressult
+      ressult: objEmail
     })
   } catch (error) {
     let {message}: any = error
