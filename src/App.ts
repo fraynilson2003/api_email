@@ -8,12 +8,12 @@ const app = express()
 const corsOptions: CorsOptions = {
   origin: [
     'https://fray.vercel.app',
-    'http://localhost:5173'
+    //'http://localhost:5173'
   ]
 };
 
 app.use(cors(corsOptions));
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(morgan("dev"))
 
@@ -21,8 +21,8 @@ app.use(router)
 
 
 export {
-    app
-  }
+  app
+}
 
 
 

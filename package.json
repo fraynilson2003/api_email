@@ -11,7 +11,8 @@
     "typescript": "^5.0.4"
   },
   "scripts": {
-    "start": "nodemon index.ts"
+    "dev": "nodemon index.ts",
+    "start": "tsc && node dist/index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
