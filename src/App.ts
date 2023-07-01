@@ -5,11 +5,23 @@ import cors, { CorsOptions } from "cors"
 
 const app = express()
 
+// const corsOptions: CorsOptions = {
+//   origin: [
+//     'https://fray.vercel.app',
+//     //'http://localhost:5173'
+//   ]
+// };
+
+const whitelist = ["https://fray.vercel.app"];
+
 const corsOptions: CorsOptions = {
-  origin: [
-    'https://fray.vercel.app',
-    //'http://localhost:5173'
-  ]
+  origin: (origin, callback) => {
+    if (whitelist.indexOf(origin!) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("No permitido por CORS"));
+    }
+  },
 };
 
 app.use(cors(corsOptions));
